@@ -1,0 +1,634 @@
+version 3
+run RIP_Scenario-0-20251002-14:07:54-11420
+attr configname RIP_Scenario
+attr datetime 20251002-14:07:54
+attr datetimef 20251002-140754
+attr experiment RIP_Scenario
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network NetworkTopology
+attr processid 11420
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config description "RIP with Hop Count Routing"
+config network NetworkTopology
+config sim-time-limit 60s
+config **.ripRouter*.updateInterval 30
+config **.ripRouter*.invalidTimer 180
+config **.ripRouter*.flushTimer 240
+config **.ripRouter*.maxHopCount 15
+config **.videoTraffic.packetLength 1500
+config **.videoTraffic.sendInterval exponential(0.033s)
+config **.videoTraffic.startTime "uniform(0s, 1s)"
+config **.videoTraffic.stopTime 60
+config **.voiceTraffic.packetLength 160B
+config **.voiceTraffic.sendInterval 0.02
+config **.voiceTraffic.startTime "uniform(0s, 1s)"
+config **.voiceTraffic.stopTime 60
+config **.dataTraffic.packetLength 512
+config **.dataTraffic.sendInterval exponential(0.1s)
+config **.dataTraffic.startTime "uniform(0s, 1s)"
+config **.dataTraffic.stopTime 60
+config **.perfMonitor.measurementInterval 1
+config **.perfMonitor.outputFile "\"rip_results.vec\""
+config **.perfMonitor.statisticsFile "\"rip_stats.sca\""
+config network NetworkTopology
+config sim-time-limit 60s
+config cpu-time-limit 300s
+config debug-on-errors true
+config record-eventlog true
+
+par NetworkTopology.host1.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host1.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.host1.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host1.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host1.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.host1.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter1.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter1.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter1.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.host2.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host2.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.host2.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host2.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host2.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.host2.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter4.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter4.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter4.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.host3.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host3.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.host3.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host3.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host3.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.host3.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter3.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter3.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter3.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.host4.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host4.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.host4.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host4.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host4.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.host4.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter4.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter4.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter4.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter1.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[1].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter1.out[1].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter1.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter2.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter2.out[0].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter2.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[2].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter1.out[2].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[2].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter1.out[2].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter1.out[2].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter1.out[2].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter3.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[1].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter3.out[1].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter3.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter2.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[1].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter2.out[1].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter2.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter5.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter5.out[0].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter5.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[2].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter3.out[2].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[2].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter3.out[2].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter3.out[2].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter3.out[2].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter5.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[1].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter5.out[1].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter5.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[2].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter4.out[2].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[2].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter4.out[2].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter4.out[2].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[2].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[2].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter5.out[2].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[2].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter5.out[2].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter5.out[2].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter5.out[2].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[2].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter2.out[2].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[2].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter2.out[2].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter2.out[2].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[2].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[3].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter4.out[3].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[3].channel delay 0.002s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter4.out[3].channel datarate 1e+09bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter4.out[3].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter4.out[3].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter1.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter1.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter1.out[0].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter1.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter1.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter1.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter2.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter2.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter2.out[0].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter2.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter2.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter2.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter1.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter1.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter1.out[1].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter1.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter1.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter1.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter3.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter3.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter3.out[0].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter3.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter3.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter3.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter2.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter2.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter2.out[1].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter2.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter2.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter2.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter4.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter4.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter4.out[0].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter4.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter4.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter4.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter3.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter3.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter3.out[1].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter3.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter3.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter3.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter4.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter4.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter4.out[1].channel delay 0.005s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter4.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter4.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter4.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[3].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ospfRouter2.out[3].channel disabled false
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[3].channel delay 0.01s
+attr mutable ""
+attr unit s
+par NetworkTopology.ospfRouter2.out[3].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ospfRouter2.out[3].channel ber 0
+attr mutable ""
+par NetworkTopology.ospfRouter2.out[3].channel per 0
+attr mutable ""
+par NetworkTopology.ripRouter1.out[2].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.ripRouter1.out[2].channel disabled false
+attr mutable ""
+par NetworkTopology.ripRouter1.out[2].channel delay 0.01s
+attr mutable ""
+attr unit s
+par NetworkTopology.ripRouter1.out[2].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.ripRouter1.out[2].channel ber 0
+attr mutable ""
+par NetworkTopology.ripRouter1.out[2].channel per 0
+attr mutable ""
+par NetworkTopology.videoTraffic.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.videoTraffic.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.videoTraffic.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.videoTraffic.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.videoTraffic.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.videoTraffic.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.host1.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host1.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.host1.out[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host1.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host1.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.host1.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.voiceTraffic.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.voiceTraffic.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.voiceTraffic.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.voiceTraffic.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.voiceTraffic.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.voiceTraffic.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.host2.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host2.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.host2.out[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host2.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host2.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.host2.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.dataTraffic.out[0].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.dataTraffic.out[0].channel disabled false
+attr mutable ""
+par NetworkTopology.dataTraffic.out[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.dataTraffic.out[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.dataTraffic.out[0].channel ber 0
+attr mutable ""
+par NetworkTopology.dataTraffic.out[0].channel per 0
+attr mutable ""
+par NetworkTopology.host3.out[1].channel typename "\"ned.DatarateChannel\""
+par NetworkTopology.host3.out[1].channel disabled false
+attr mutable ""
+par NetworkTopology.host3.out[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par NetworkTopology.host3.out[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par NetworkTopology.host3.out[1].channel ber 0
+attr mutable ""
+par NetworkTopology.host3.out[1].channel per 0
+attr mutable ""
+par NetworkTopology.host1 typename "\"SimpleHost\""
+par NetworkTopology.host1 hostId "\"\""
+par NetworkTopology.host2 typename "\"SimpleHost\""
+par NetworkTopology.host2 hostId "\"\""
+par NetworkTopology.host3 typename "\"SimpleHost\""
+par NetworkTopology.host3 hostId "\"\""
+par NetworkTopology.host4 typename "\"SimpleHost\""
+par NetworkTopology.host4 hostId "\"\""
+par NetworkTopology.ospfRouter1 typename "\"OSPFTE_Router\""
+par NetworkTopology.ospfRouter1 ospfAreaId "\"0.0.0.0\""
+par NetworkTopology.ospfRouter1 routerId "\"\""
+par NetworkTopology.ospfRouter1 helloInterval 10
+par NetworkTopology.ospfRouter1 deadInterval 40
+par NetworkTopology.ospfRouter1 teEnabled true
+par NetworkTopology.ospfRouter1 bandwidthWeight 1
+par NetworkTopology.ospfRouter1 delayWeight 1
+par NetworkTopology.ospfRouter1 loadWeight 1
+par NetworkTopology.ospfRouter1 tedUpdateInterval 30
+par NetworkTopology.ospfRouter2 typename "\"OSPFTE_Router\""
+par NetworkTopology.ospfRouter2 ospfAreaId "\"0.0.0.0\""
+par NetworkTopology.ospfRouter2 routerId "\"\""
+par NetworkTopology.ospfRouter2 helloInterval 10
+par NetworkTopology.ospfRouter2 deadInterval 40
+par NetworkTopology.ospfRouter2 teEnabled true
+par NetworkTopology.ospfRouter2 bandwidthWeight 1
+par NetworkTopology.ospfRouter2 delayWeight 1
+par NetworkTopology.ospfRouter2 loadWeight 1
+par NetworkTopology.ospfRouter2 tedUpdateInterval 30
+par NetworkTopology.ospfRouter3 typename "\"OSPFTE_Router\""
+par NetworkTopology.ospfRouter3 ospfAreaId "\"0.0.0.0\""
+par NetworkTopology.ospfRouter3 routerId "\"\""
+par NetworkTopology.ospfRouter3 helloInterval 10
+par NetworkTopology.ospfRouter3 deadInterval 40
+par NetworkTopology.ospfRouter3 teEnabled true
+par NetworkTopology.ospfRouter3 bandwidthWeight 1
+par NetworkTopology.ospfRouter3 delayWeight 1
+par NetworkTopology.ospfRouter3 loadWeight 1
+par NetworkTopology.ospfRouter3 tedUpdateInterval 30
+par NetworkTopology.ospfRouter4 typename "\"OSPFTE_Router\""
+par NetworkTopology.ospfRouter4 ospfAreaId "\"0.0.0.0\""
+par NetworkTopology.ospfRouter4 routerId "\"\""
+par NetworkTopology.ospfRouter4 helloInterval 10
+par NetworkTopology.ospfRouter4 deadInterval 40
+par NetworkTopology.ospfRouter4 teEnabled true
+par NetworkTopology.ospfRouter4 bandwidthWeight 1
+par NetworkTopology.ospfRouter4 delayWeight 1
+par NetworkTopology.ospfRouter4 loadWeight 1
+par NetworkTopology.ospfRouter4 tedUpdateInterval 30
+par NetworkTopology.ospfRouter5 typename "\"OSPFTE_Router\""
+par NetworkTopology.ospfRouter5 ospfAreaId "\"0.0.0.0\""
+par NetworkTopology.ospfRouter5 routerId "\"\""
+par NetworkTopology.ospfRouter5 helloInterval 10
+par NetworkTopology.ospfRouter5 deadInterval 40
+par NetworkTopology.ospfRouter5 teEnabled true
+par NetworkTopology.ospfRouter5 bandwidthWeight 1
+par NetworkTopology.ospfRouter5 delayWeight 1
+par NetworkTopology.ospfRouter5 loadWeight 1
+par NetworkTopology.ospfRouter5 tedUpdateInterval 30
+par NetworkTopology.ripRouter1 typename "\"RIP_Router\""
+par NetworkTopology.ripRouter1 updateInterval 30
+par NetworkTopology.ripRouter1 invalidTimer 180
+par NetworkTopology.ripRouter1 flushTimer 240
+par NetworkTopology.ripRouter1 maxHopCount 15
+par NetworkTopology.ripRouter2 typename "\"RIP_Router\""
+par NetworkTopology.ripRouter2 updateInterval 30
+par NetworkTopology.ripRouter2 invalidTimer 180
+par NetworkTopology.ripRouter2 flushTimer 240
+par NetworkTopology.ripRouter2 maxHopCount 15
+par NetworkTopology.ripRouter3 typename "\"RIP_Router\""
+par NetworkTopology.ripRouter3 updateInterval 30
+par NetworkTopology.ripRouter3 invalidTimer 180
+par NetworkTopology.ripRouter3 flushTimer 240
+par NetworkTopology.ripRouter3 maxHopCount 15
+par NetworkTopology.ripRouter4 typename "\"RIP_Router\""
+par NetworkTopology.ripRouter4 updateInterval 30
+par NetworkTopology.ripRouter4 invalidTimer 180
+par NetworkTopology.ripRouter4 flushTimer 240
+par NetworkTopology.ripRouter4 maxHopCount 15
+par NetworkTopology.videoTraffic typename "\"VideoTrafficGenerator\""
+par NetworkTopology.videoTraffic packetLength 1500
+par NetworkTopology.videoTraffic sendInterval 0.0262639s
+attr unit s
+par NetworkTopology.videoTraffic startTime 0.592845s
+attr unit s
+par NetworkTopology.videoTraffic stopTime 60s
+attr unit s
+par NetworkTopology.videoTraffic bitrate 5e+06
+par NetworkTopology.videoTraffic burstSize 1
+scalar NetworkTopology.videoTraffic "packets sent" 24
+scalar NetworkTopology.videoTraffic "bytes generated" 36000
+scalar NetworkTopology.videoTraffic "average bitrate" 266219.86098322
+par NetworkTopology.voiceTraffic typename "\"VoiceTrafficGenerator\""
+par NetworkTopology.voiceTraffic packetLength 160
+par NetworkTopology.voiceTraffic sendInterval 0.02s
+attr unit s
+par NetworkTopology.voiceTraffic startTime 0.715189s
+attr unit s
+par NetworkTopology.voiceTraffic stopTime 60s
+attr unit s
+par NetworkTopology.voiceTraffic bitrate 64000
+par NetworkTopology.voiceTraffic jitterTolerance 0.05
+scalar NetworkTopology.voiceTraffic "packets sent" 18
+scalar NetworkTopology.voiceTraffic "bytes generated" 2880
+scalar NetworkTopology.voiceTraffic "average bitrate" 21297.588878658
+par NetworkTopology.dataTraffic typename "\"DataTrafficGenerator\""
+par NetworkTopology.dataTraffic packetLength 512
+par NetworkTopology.dataTraffic sendInterval 0.18596s
+attr unit s
+par NetworkTopology.dataTraffic startTime 0.602763s
+attr unit s
+par NetworkTopology.dataTraffic stopTime 60s
+attr unit s
+par NetworkTopology.dataTraffic bitrate 1e+06
+par NetworkTopology.dataTraffic burstInterval 9.75773s
+attr unit s
+scalar NetworkTopology.dataTraffic "packets sent" 3
+scalar NetworkTopology.dataTraffic "bytes generated" 1536
+scalar NetworkTopology.dataTraffic "average bitrate" 11358.714068617
+par NetworkTopology typename "\"NetworkTopology\""
+

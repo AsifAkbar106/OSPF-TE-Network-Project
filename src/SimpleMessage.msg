@@ -1,0 +1,4 @@
+message SimpleMessage
+{
+    string data;
+}
